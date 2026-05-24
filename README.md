@@ -1,23 +1,75 @@
-# KDE neon Docker images - Plasma
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# docker-images
 
-Updated daily with the latest from KDE neon, itself automatically updated with the latest KDE software.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
-## Running
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-Flavours available are: `kdeneon/plasma:dev-unstable`, `kdeneon/plasma:dev-stable`, `kdeneon/plasma:user`, `kdeneon/plasma:user-lts`
+## Architecture
 
-For flavours with all applications installed see `kdeneon/all`.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-By default it will run a full session with startkde on DISPLAY=:1, you can use Xephyr as an X server window.
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/docker-images.git
+cd docker-images
+```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/docker-images`](https://github.com/Interested-Deving-1896/docker-images) and mirrored through:
 
 ```
-Xephyr -screen 1024x768 :1 &
-docker run -v /tmp/.X11-unix:/tmp/.X11-unix kdeneon/plasma:dev-unstable
+Interested-Deving-1896/docker-images  ──►  OpenOS-Project-OSP/docker-images  ──►  OpenOS-Project-Ecosystem-OOC/docker-images
 ```
 
-Or you can tell it to run on DISPLAY=:0 and run a single app
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-```
-xhost +
-docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=:0 kdeneon/plasma:dev-unstable dolphin
-```
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
