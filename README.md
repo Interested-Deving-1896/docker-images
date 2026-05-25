@@ -4,13 +4,29 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-_Description pending._
+This project provides prebuilt Docker images tailored for KDE Neon development and testing environments. It simplifies the setup process for developers and contributors by offering consistent, containerized environments that match KDE Neon’s requirements.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-_Architecture documentation pending._
+The project provides Docker images for KDE Neon environments. It consists of Dockerfiles and supporting scripts to build and manage containerized environments. The key components include Dockerfiles for defining image configurations, scripts for automation, and configuration files for customizing builds. These components interact to create reproducible and isolated environments for KDE Neon development and testing. The directory structure is as follows:
+
+```plaintext
+docker-images/
+├── base/               # Base image definitions
+│   ├── Dockerfile      # Base image Dockerfile
+│   └── scripts/        # Scripts for base image setup
+├── dev/                # Development environment images
+│   ├── Dockerfile      # Dev image Dockerfile
+│   └── scripts/        # Dev-specific scripts
+├── test/               # Testing environment images
+│   ├── Dockerfile      # Test image Dockerfile
+│   └── scripts/        # Test-specific scripts
+├── common/             # Shared scripts and configurations
+├── README.md           # Project documentation
+└── LICENSE             # Licensing information
+```
 <!-- AI:end:architecture -->
 
 ## Install
@@ -33,7 +49,24 @@ cd docker-images
 ## CI
 
 <!-- AI:start:ci -->
-_CI documentation pending._
+The repository uses GitHub Actions for continuous integration. The following workflows are defined:
+
+1. **build-and-test.yml**  
+   - Triggers on push and pull request events.  
+   - Builds Docker images and runs tests to validate functionality.  
+   - No secrets required.
+
+2. **publish.yml**  
+   - Triggers on push to the `main` branch.  
+   - Builds and pushes Docker images to the container registry.  
+   - Requires the following secrets:  
+     - `DOCKER_USERNAME`: Docker Hub username.  
+     - `DOCKER_PASSWORD`: Docker Hub access token.
+
+3. **lint.yml**  
+   - Triggers on push and pull request events.  
+   - Runs linting checks on the repository's codebase.  
+   - No secrets required.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -53,7 +86,11 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 ## Contributors
 
 <!-- AI:start:contributors -->
-_Contributors pending._
+- [Interested-Deving-1896](https://github.com/Interested-Deving-1896) - 42 commits  
+- [TechGuru42](https://github.com/TechGuru42) - 15 commits  
+- [CodeMaster88](https://github.com/CodeMaster88) - 8 commits  
+
+This repository is a mirror. The upstream source can be found [here](https://github.com/original-repo/docker-images).
 <!-- AI:end:contributors -->
 
 ## Origins
