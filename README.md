@@ -51,22 +51,13 @@ cd docker-images
 <!-- AI:start:ci -->
 The repository uses GitHub Actions for continuous integration. The following workflows are defined:
 
-1. **build-and-test.yml**  
-   - Triggers on `push` and `pull_request` events.  
-   - Builds Docker images and runs tests to validate functionality.  
-   - No secrets required.
+1. **build-and-test.yml**: Builds Docker images from the `Dockerfile` and runs tests to validate functionality. No secrets are required.
 
-2. **publish.yml**  
-   - Triggers on `push` events to the `main` branch and on manual dispatch.  
-   - Builds and pushes Docker images to the container registry.  
-   - Requires the following secrets:  
-     - `DOCKER_USERNAME`: Docker Hub username.  
-     - `DOCKER_PASSWORD`: Docker Hub access token.
+2. **publish.yml**: Builds and pushes Docker images to a container registry. Requires the following secrets:
+   - `DOCKER_USERNAME`: Username for the container registry.
+   - `DOCKER_PASSWORD`: Password or token for the container registry.
 
-3. **lint.yml**  
-   - Triggers on `push` and `pull_request` events.  
-   - Runs linters to ensure code quality and adherence to style guidelines.  
-   - No secrets required.
+Ensure the required secrets are configured in the repository settings for the workflows to function correctly.
 <!-- AI:end:ci -->
 
 ## Mirror chain
