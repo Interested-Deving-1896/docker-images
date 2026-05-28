@@ -10,22 +10,14 @@ This project provides pre-configured Docker images tailored for KDE Neon develop
 ## Architecture
 
 <!-- AI:start:architecture -->
-The project provides Docker images for KDE Neon environments. It consists of Dockerfiles and supporting scripts to build and manage containerized environments. The key components include Dockerfiles for defining image configurations, scripts for automation, and configuration files for customizing builds. These components interact to create reproducible and isolated environments for KDE Neon development and testing. The directory structure is as follows:
+This project provides Docker images for KDE Neon development. The architecture consists of a Dockerfile defining the base image and build instructions, a `neon.list` file specifying package sources, and a `neondocker` script for managing container operations. The `README.md` contains usage documentation. The components interact by using the `neon.list` to configure the package manager inside the container, while the `neondocker` script simplifies container lifecycle tasks. The directory structure is as follows:
 
 ```plaintext
 docker-images/
-├── base/               # Base image definitions
-│   ├── Dockerfile      # Base image Dockerfile
-│   └── scripts/        # Scripts for base image setup
-├── dev/                # Development environment images
-│   ├── Dockerfile      # Dev image Dockerfile
-│   └── scripts/        # Dev-specific scripts
-├── test/               # Testing environment images
-│   ├── Dockerfile      # Test image Dockerfile
-│   └── scripts/        # Test-specific scripts
-├── common/             # Shared scripts and configurations
-├── README.md           # Project documentation
-└── LICENSE             # Licensing information
+├── Dockerfile        # Defines the Docker image build process
+├── README.md         # Documentation for the project
+├── neon.list         # Package source list for KDE Neon
+└── neondocker        # Script to manage Docker containers
 ```
 <!-- AI:end:architecture -->
 
@@ -49,13 +41,19 @@ cd docker-images
 ## CI
 
 <!-- AI:start:ci -->
-The repository uses GitHub Actions for continuous integration. The following workflows are defined:
+The repository uses GitHub Actions for Continuous Integration. The following workflows are defined:
 
-1. **build-and-test.yml**: Builds Docker images from the `Dockerfile` and runs tests to validate functionality. No secrets are required.
+1. **build-and-test.yml**  
+   - Builds Docker images using the `Dockerfile` and runs tests to validate functionality.  
+   - Triggers on push and pull request events targeting the `main` branch.  
+   - No secrets required.
 
-2. **publish.yml**: Builds and pushes Docker images to a container registry. Requires the following secrets:
-   - `DOCKER_USERNAME`: Username for the container registry.
-   - `DOCKER_PASSWORD`: Password or token for the container registry.
+2. **publish.yml**  
+   - Builds and pushes Docker images to a container registry.  
+   - Triggers on new tags following semantic versioning.  
+   - Requires the following secrets:
+     - `DOCKER_USERNAME`: Docker Hub username.
+     - `DOCKER_PASSWORD`: Docker Hub access token.
 
 Ensure the required secrets are configured in the repository settings for the workflows to function correctly.
 <!-- AI:end:ci -->
@@ -78,9 +76,9 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 
 <!-- AI:start:contributors -->
 [@jriddell](https://github.com/jriddell): 121 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 5 commits  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 7 commits  
 
-*This repository is a mirror. Please refer to the upstream source for the original content.*
+*Note: This repository is a mirror. Please refer to the upstream source for the original project.*
 <!-- AI:end:contributors -->
 
 ## Origins
