@@ -4,20 +4,21 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-This project provides Docker images for KDE Neon, enabling developers to build, test, and deploy applications in a consistent environment. It simplifies the setup process by packaging dependencies and configurations required for KDE Neon development. Users include developers working on KDE applications or those needing a controlled environment for testing.
+This project provides pre-configured Docker images for KDE Neon, enabling developers to build, test, and deploy KDE applications in a consistent environment. It simplifies the setup process by offering ready-to-use configurations tailored for KDE development workflows.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-The project consists of Docker images designed for KDE Neon environments. The key components include the `Dockerfile`, which defines the build instructions for the container, and `neon.list`, which specifies the package sources for KDE Neon. The `neondocker` script provides utility functions for managing the Docker containers. The `README.md` serves as the documentation for the repository. These components interact to create and manage Docker containers configured for KDE Neon. The directory structure is flat, with all files located at the root level.
+This project provides Docker images for KDE Neon environments. The architecture consists of a Dockerfile defining the base image and build steps, a `neon.list` file specifying APT sources, and the `neondocker` script for managing container operations. The `Dockerfile` pulls a base image, installs dependencies, and configures the environment using `neon.list`. The `neondocker` script interacts with Docker to build, run, and manage containers. The `README.md` provides documentation.
 
-```
+Directory structure:
+```plaintext
 .
-├── Dockerfile      # Defines the container build process
-├── README.md       # Documentation for the repository
-├── neon.list       # Package sources for KDE Neon
-└── neondocker      # Utility script for container management
+├── Dockerfile       # Defines the Docker image build process
+├── README.md        # Project documentation
+├── neon.list        # APT sources for KDE Neon
+└── neondocker       # Script for managing Docker containers
 ```
 <!-- AI:end:architecture -->
 
