@@ -4,20 +4,20 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-This project provides pre-configured Docker images tailored for KDE Neon development and testing environments. It simplifies the setup process for developers by offering a consistent and reproducible containerized environment. The images are designed to support workflows related to building, testing, and running KDE applications.
+This project provides Docker images for KDE Neon, enabling developers to build, test, and deploy applications in a consistent environment. It simplifies the setup process by packaging dependencies and configurations required for KDE Neon development. Users include developers working on KDE applications or those needing a controlled environment for testing.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-This project provides Docker images for KDE Neon development. The architecture consists of a Dockerfile defining the base image and build instructions, a `neon.list` file specifying package sources, and a `neondocker` script for managing container operations. The `README.md` contains usage documentation. The components interact by using the `neon.list` to configure the package manager inside the container, while the `neondocker` script simplifies container lifecycle tasks. The directory structure is as follows:
+The project consists of Docker images designed for KDE Neon environments. The key components include the `Dockerfile`, which defines the build instructions for the container, and `neon.list`, which specifies the package sources for KDE Neon. The `neondocker` script provides utility functions for managing the Docker containers. The `README.md` serves as the documentation for the repository. These components interact to create and manage Docker containers configured for KDE Neon. The directory structure is flat, with all files located at the root level.
 
-```plaintext
-docker-images/
-├── Dockerfile        # Defines the Docker image build process
-├── README.md         # Documentation for the project
-├── neon.list         # Package source list for KDE Neon
-└── neondocker        # Script to manage Docker containers
+```
+.
+├── Dockerfile      # Defines the container build process
+├── README.md       # Documentation for the repository
+├── neon.list       # Package sources for KDE Neon
+└── neondocker      # Utility script for container management
 ```
 <!-- AI:end:architecture -->
 
