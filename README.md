@@ -4,20 +4,19 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-This project provides pre-configured Docker images for KDE Neon, enabling developers to build, test, and deploy KDE applications in a consistent environment. It simplifies the setup process by offering ready-to-use configurations tailored for KDE development workflows.
+This project provides Docker images tailored for KDE Neon development and testing environments. It simplifies the process of setting up consistent and reproducible containers for developers working on KDE applications or testing KDE Neon-specific configurations.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-This project provides Docker images for KDE Neon environments. The architecture consists of a Dockerfile defining the base image and build steps, a `neon.list` file specifying APT sources, and the `neondocker` script for managing container operations. The `Dockerfile` pulls a base image, installs dependencies, and configures the environment using `neon.list`. The `neondocker` script interacts with Docker to build, run, and manage containers. The `README.md` provides documentation.
+This project provides Docker images for KDE Neon. The key components include the `Dockerfile`, which defines the image build process, and `neon.list`, which specifies the package sources for KDE Neon. The `neondocker` script facilitates interaction with the Docker images. These components work together to build and manage containerized environments for KDE Neon. The directory structure is as follows:
 
-Directory structure:
 ```plaintext
-.
+docker-images/
 ├── Dockerfile       # Defines the Docker image build process
 ├── README.md        # Project documentation
-├── neon.list        # APT sources for KDE Neon
+├── neon.list        # Package source list for KDE Neon
 └── neondocker       # Script for managing Docker containers
 ```
 <!-- AI:end:architecture -->
@@ -77,9 +76,9 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 
 <!-- AI:start:contributors -->
 [@jriddell](https://github.com/jriddell): 121 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 7 commits  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 10 commits  
 
-*Note: This repository is a mirror. Please refer to the upstream source for the original project.*
+*Note: This repository is a mirror. Please refer to the upstream source for additional contributions.*
 <!-- AI:end:contributors -->
 
 ## Origins
