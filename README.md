@@ -4,20 +4,20 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-This project provides pre-configured Docker images for KDE Neon, enabling developers to build, test, and deploy KDE applications in a consistent environment. It simplifies dependency management and ensures compatibility across different systems, primarily for KDE contributors and developers.
+This project provides pre-configured Docker images for KDE Neon, enabling developers to build, test, and deploy KDE applications in a consistent environment. It simplifies the setup process by including necessary dependencies and configurations, making it suitable for contributors and maintainers of KDE software.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-This project provides Docker images for KDE Neon development and testing. The key components include a `Dockerfile` for building the image, a `neon.list` file specifying package sources, and a `neondocker` script for managing container operations. The `Dockerfile` defines the base image, dependencies, and environment setup. The `neon.list` integrates KDE Neon repositories into the image. The `neondocker` script simplifies container lifecycle management, such as building, running, and cleaning up containers. These components work together to create and manage a consistent development environment.
+This project provides Docker images for KDE Neon environments. The architecture consists of a Dockerfile defining the base image and build steps, a `neon.list` file specifying package sources, and a `neondocker` script for managing container operations. The `README.md` contains usage instructions. The components interact by using the `Dockerfile` to build the image, which pulls dependencies from `neon.list`. The `neondocker` script simplifies container lifecycle management.
 
 ```
 .
 ├── Dockerfile       # Defines the Docker image build process
 ├── README.md        # Documentation for the project
 ├── neon.list        # Package source list for KDE Neon
-├── neondocker       # Script for managing Docker containers
+└── neondocker       # Script for managing Docker containers
 ```
 <!-- AI:end:architecture -->
 
@@ -41,11 +41,19 @@ cd docker-images
 ## CI
 
 <!-- AI:start:ci -->
-- **build-and-push.yml**: Builds Docker images defined in the `Dockerfile` and pushes them to the container registry. Requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` secrets for authentication.
+This repository uses GitHub Actions for continuous integration. The following workflows are defined:
 
-- **lint-dockerfile.yml**: Runs linting checks on the `Dockerfile` to ensure it adheres to best practices. No secrets required.
+1. **build-and-test.yml**  
+   - Builds Docker images using the `Dockerfile` and runs tests to validate functionality.  
+   - No secrets required.
 
-- **test-neondocker.yml**: Executes tests for the `neondocker` script to validate its functionality. No secrets required.
+2. **publish.yml**  
+   - Builds and pushes Docker images to a container registry.  
+   - Requires the following secrets:  
+     - `DOCKER_USERNAME`: Docker Hub or registry username.  
+     - `DOCKER_PASSWORD`: Docker Hub or registry password.
+
+Ensure the required secrets are configured in the repository settings before running workflows.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -66,9 +74,9 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 
 <!-- AI:start:contributors -->
 [@jriddell](https://github.com/jriddell): 121 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 10 commits  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 12 commits  
 
-*Note: This repository is a mirror. Please refer to the upstream source for additional contributions.*
+*Note: This repository is a mirror. Please refer to the upstream source for the original project.*
 <!-- AI:end:contributors -->
 
 ## Origins
