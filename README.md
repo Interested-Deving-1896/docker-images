@@ -4,7 +4,7 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
 
 <!-- AI:start:what-it-does -->
-This project provides Docker images for KDE Neon, enabling developers and testers to run and test KDE software in isolated containerized environments. It simplifies setting up consistent development and testing environments by packaging necessary dependencies and configurations.
+This project provides Docker images tailored for KDE Neon development and testing environments. It simplifies the setup process for developers and contributors by offering pre-configured containers with the necessary dependencies and tools.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
