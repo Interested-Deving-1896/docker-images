@@ -42,15 +42,11 @@ cd docker-images
 ## CI
 
 <!-- AI:start:ci -->
-The repository uses GitHub Actions for continuous integration. The following workflows are defined:
+- **build-and-push.yml**: Builds Docker images defined in the `Dockerfile` and pushes them to the configured container registry. Requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` secrets for authentication.
 
-1. **`build-and-test.yml`**: Builds Docker images using the `Dockerfile` and runs tests to validate functionality. No secrets are required.
+- **lint-dockerfile.yml**: Runs linting checks on the `Dockerfile` to ensure compliance with best practices. No secrets required.
 
-2. **`publish.yml`**: Builds and pushes Docker images to a container registry. Requires the following secrets:
-   - `DOCKER_USERNAME`: Docker Hub or registry username.
-   - `DOCKER_PASSWORD`: Docker Hub or registry password.
-
-Ensure the required secrets are configured in the repository settings for the workflows to function correctly.
+- **test-neondocker.yml**: Executes tests for the `neondocker` script to verify functionality. No secrets required.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -71,9 +67,9 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 
 <!-- AI:start:contributors -->
 [@jriddell](https://github.com/jriddell): 121 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 36 commits  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 40 commits  
 
-*Note: This repository is a mirror. Please refer to the upstream source for the original project.*
+*This repository is a mirror. Please refer to the upstream source for the original project.*
 <!-- AI:end:contributors -->
 
 ## Origins
