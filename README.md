@@ -42,11 +42,19 @@ cd docker-images
 ## CI
 
 <!-- AI:start:ci -->
-- **build-and-push.yml**: Builds Docker images defined in the `Dockerfile` and pushes them to the configured container registry. Requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` secrets for authentication.
+The repository uses GitHub Actions for Continuous Integration. The following workflows are defined:
 
-- **lint-dockerfile.yml**: Runs linting checks on the `Dockerfile` to ensure compliance with best practices. No secrets required.
+1. **`build-and-test.yml`**  
+   - Builds Docker images using the `Dockerfile` and runs tests to validate functionality.  
+   - Triggers on push and pull request events to any branch.  
+   - Requires the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for authentication with Docker Hub.
 
-- **test-neondocker.yml**: Executes tests for the `neondocker` script to verify functionality. No secrets required.
+2. **`publish.yml`**  
+   - Builds and pushes Docker images to Docker Hub.  
+   - Triggers on new tags matching the pattern `v*`.  
+   - Requires the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for publishing.
+
+Ensure the required secrets are configured in the repository settings for workflows to execute successfully.
 <!-- AI:end:ci -->
 
 ## Mirror chain
