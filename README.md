@@ -1,7 +1,8 @@
 [update-readmes]   Mode: rewrite — migrating to template structure...
 # docker-images
 
-[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/docker-images) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria) [![Energy](https://api.green-coding.io/v1/ci/badge/get?repo=Interested-Deving-1896%2Fdocker-images&branch=main&workflow=eco-audit.yml)](https://metrics.green-coding.io/ci-index.html)
+
 
 <!-- AI:start:what-it-does -->
 This project provides Docker images tailored for KDE Neon development and testing environments. It simplifies the process of setting up consistent and reproducible containers for developers working on KDE applications or related projects.
@@ -44,14 +45,14 @@ cd docker-images
 <!-- AI:start:ci -->
 The repository uses GitHub Actions for Continuous Integration. The following workflows are defined:
 
-1. **`build-and-test.yml`**  
-   - Builds Docker images using the `Dockerfile` and runs tests to validate functionality.  
-   - Triggers on push and pull request events to any branch.  
+1. **`build-and-test.yml`**
+   - Builds Docker images using the `Dockerfile` and runs tests to validate functionality.
+   - Triggers on push and pull request events to any branch.
    - Requires the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for authentication with Docker Hub.
 
-2. **`publish.yml`**  
-   - Builds and pushes Docker images to Docker Hub.  
-   - Triggers on new tags matching the pattern `v*`.  
+2. **`publish.yml`**
+   - Builds and pushes Docker images to Docker Hub.
+   - Triggers on new tags matching the pattern `v*`.
    - Requires the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for publishing.
 
 Ensure the required secrets are configured in the repository settings for workflows to execute successfully.
@@ -74,8 +75,8 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 ## Contributors
 
 <!-- AI:start:contributors -->
-[@jriddell](https://github.com/jriddell): 121 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 40 commits  
+[@jriddell](https://github.com/jriddell): 121 commits
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896): 40 commits
 
 *This repository is a mirror. Please refer to the upstream source for the original project.*
 <!-- AI:end:contributors -->
@@ -91,6 +92,20 @@ _Original project — no upstream fork._
 <!-- AI:start:resources -->
 _No additional resource files found._
 <!-- AI:end:resources -->
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/docker-images/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/docker-images/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
 
 ## License
 
