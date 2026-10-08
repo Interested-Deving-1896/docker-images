@@ -79,7 +79,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 | Contributor | Commits |
 |---|---|
 | [@jriddell](https://github.com/jriddell) | 121 |
-| [@Interested-Deving-1896](https://github.com/Interested-Deving-1896) | 51 |
+| [@Interested-Deving-1896](https://github.com/Interested-Deving-1896) | 70 |
 <!-- AI:end:contributors -->
 
 ## Origins
@@ -114,5 +114,5 @@ for the underlying accessibility reference.
 ## License
 
 <!-- AI:start:license -->
-<!-- License not detected — add a LICENSE file to this repo. -->
+[GPL-3.0](https://github.com/Interested-Deving-1896/docker-images/blob/0-a/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
 <!-- AI:end:license -->
